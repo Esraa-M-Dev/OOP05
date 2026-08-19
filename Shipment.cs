@@ -96,6 +96,12 @@ namespace AssignmentOOP05
         {
             return (Shipment)this.MemberwiseClone();
         }
+        //Deep copy
+        public Shipment DeepCopy()
+        {
+            return new Shipment(this.TrackingCode, this.Description, this.Weight, this.DeliveryFee, new DeliveryAddress(this.Destination.City,this.Destination.Street,this.Destination.BuildingNumber));
+
+        }
 
         #endregion
     }

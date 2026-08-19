@@ -61,6 +61,12 @@
             //copiedshipment.Destination.City = "cairo";
             //Console.WriteLine(originalshipment.Destination.City); //cairo :affected:2 objects has same reference of Delivery Address
             #endregion
+            #region question3-deep copy
+            Shipment original = new Shipment("sh001", "laptop", 8m, 50m, new DeliveryAddress("cairo", "nasr street", 8));
+            Shipment copied = original.DeepCopy();
+            copied.Destination.City = "beni suef";
+            Console.WriteLine(original.Destination.City); //references completely independent
+            #endregion
         }
     }
 }
