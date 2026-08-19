@@ -86,6 +86,11 @@ namespace AssignmentOOP05
             TotalShipmentsCreated = 0;
             Console.WriteLine("Shipment system initialized");
         }
+        //static method
+        static int GetTotalShipments()
+        {
+            return TotalShipmentsCreated;
+        }
         #endregion
         #region methods
         //abstract method
