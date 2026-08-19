@@ -7,6 +7,7 @@ namespace AssignmentOOP05
     internal class Shipment
     {
         #region fields
+        private static int TotalShipmentsCreated = 0;
         private string trackingcode = null!;
         private string description = null!;
         private decimal weight;
@@ -77,6 +78,7 @@ namespace AssignmentOOP05
             Weight = weight;
             DeliveryFee = deliveryFee;
             Destination = destination;
+            TotalShipmentsCreated++;
         }
         #endregion
         #region methods
