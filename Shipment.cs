@@ -87,7 +87,7 @@ namespace AssignmentOOP05
             Console.WriteLine("Shipment system initialized");
         }
         //static method
-        static int GetTotalShipments()
+       public static int GetTotalShipments()
         {
             return TotalShipmentsCreated;
         }

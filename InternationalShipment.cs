@@ -47,7 +47,7 @@ namespace AssignmentOOP05
         #region methods
         public string GetTrackingStatus()
         {
-            return $"shipment{TrackingCode} has been delivered";
+            return "Delivered";
         } 
         #endregion
     }

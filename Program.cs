@@ -68,6 +68,65 @@
             //Console.WriteLine(original.Destination.City); //references completely independent
             //Console.WriteLine(object.ReferenceEquals(original.Destination,copied.Destination));
             #endregion
+            #region main program
+            //assignment (a)
+
+            //Shipment shipment1 = new Shipment("sh001", "laptop", 8m, 60m, new DeliveryAddress("cairo", "Naser street", 13));
+            //Shipment shipment2 = shipment1; //2 shipments refer to same object
+            //shipment2.Description = "phone";
+            //Console.WriteLine(shipment1.Description); //phone->affect change
+
+            //assignment willnot create new object(b)
+
+            //Console.WriteLine(object.ReferenceEquals(shipment1,shipment2)); //true
+
+            //creates shallow copy(c)
+            //Shipment originalshipment = new Shipment("sh001", "laptop", 7m, 70m, new DeliveryAddress("giza", "tahrir street", 9));
+            //Shipment copiedshipment = originalshipment.ShallowCopy();
+            //copiedshipment.Destination.City = "cairo";
+            //Console.WriteLine(originalshipment.Destination.City); //cairo :affected:2 objects has same reference of Delivery Address
+
+            //shallow copy shares same DeliveryAddress(d)
+            //Console.WriteLine(object.ReferenceEquals(originalshipment.Destination,copiedshipment.Destination)); //true
+
+            //creates Deep copy(e)
+            //Shipment original = new Shipment("sh001", "laptop", 8m, 50m, new DeliveryAddress("cairo", "nasr street", 8));
+            //Shipment copied = original.DeepCopy();
+            //copied.Destination.City = "beni suef";
+            //Console.WriteLine(original.Destination.City); //references completely independent
+
+            //deep copy has independent DeliveryAddress(f)
+            // Console.WriteLine(object.ReferenceEquals(original.Destination, copied.Destination)); //false
+
+            //static shipment counter(g)
+            //increment counter while call constructor in each object
+            //Shipment shipment1 = new Shipment("ship01","laptop",8m,90m,new DeliveryAddress("cairo","nasser",6));
+            //Shipment shipment2 = new Shipment("ship01","pc",18m,100m,new DeliveryAddress("Alex","abo qir",9));
+
+
+            //static constructor (h)
+
+            //automatic called before class used
+
+            //static method(i)
+            // Console.WriteLine( Shipment.GetTotalShipments()); //2
+
+            //
+            //delivery Utilities(j)
+            //DeliveryUtilities.PrintSeperator();
+            //DeliveryUtilities.PrintsystemTitle();
+
+            //create extension method-get summary(k)
+            StandardShipment standardShipment = new StandardShipment("sh01","laptop",7m,90m,new DeliveryAddress("giza","dokki street",5));
+
+            Console.WriteLine(standardShipment.GetSummary());
+
+            //is delivered
+            InternationalShipment internationalShipment = new InternationalShipment("sh01", "laptop", 7m, 90m, new DeliveryAddress("giza", "dokki street", 5),"germany",20m);
+            Console.WriteLine(internationalShipment.IsDelivered()); //true
+
+
+            #endregion
         }
     }
 }
