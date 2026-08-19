@@ -91,6 +91,11 @@ namespace AssignmentOOP05
             return new Shipment(this.TrackingCode, this.Description, this.Weight, this.DeliveryFee, this.Destination);
             
         } 
+        //shallow coping(Q2)
+        public Shipment ShallowCopy()
+        {
+            return (Shipment)this.MemberwiseClone();
+        }
 
         #endregion
     }

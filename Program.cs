@@ -45,7 +45,7 @@
             #region question1-object copying
             //demonstrate the difference between assignment shipment and copy shipment
             //assignment
-           // Shipment shipment1 = new Shipment("sh001", "laptop", 8m, 60m, new DeliveryAddress("cairo", "Naser street", 13));
+            // Shipment shipment1 = new Shipment("sh001", "laptop", 8m, 60m, new DeliveryAddress("cairo", "Naser street", 13));
             //Shipment shipment2 = shipment1; //2 shipments refer to same object
             //shipment2.Description = "phone";
             //Console.WriteLine(shipment1.Description); //phone->affect change
@@ -54,6 +54,12 @@
             //Shipment shipment3 = shipment1.CopyShipment();
             //shipment3.Description = "Pc";
             //Console.WriteLine(shipment1.Description); // un changed->new objects with new places
+            #endregion
+            #region question2-shallow copying
+            //Shipment originalshipment = new Shipment("sh001", "laptop", 7m, 70m, new DeliveryAddress("giza", "tahrir street", 9));
+            //Shipment copiedshipment = originalshipment.ShallowCopy();
+            //copiedshipment.Destination.City = "cairo";
+            //Console.WriteLine(originalshipment.Destination.City); //cairo :affected:2 objects has same reference of Delivery Address
             #endregion
         }
     }
