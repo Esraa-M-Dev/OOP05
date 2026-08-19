@@ -80,6 +80,12 @@ namespace AssignmentOOP05
             Destination = destination;
             TotalShipmentsCreated++;
         }
+        //static constructor
+        static Shipment()
+        {
+            TotalShipmentsCreated = 0;
+            Console.WriteLine("Shipment system initialized");
+        }
         #endregion
         #region methods
         //abstract method
